@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoginSite.master.cs" Inherits="Web_Doc_Truyen.LoginSite" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Admin Login</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/stlLogin.css" rel="stylesheet" />
+    <link href="fonts/fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

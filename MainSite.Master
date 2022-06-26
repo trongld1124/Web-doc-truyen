@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainSite.master.cs" Inherits="Web_Doc_Truyen.MainSite" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Mọt Truyện</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="fonts/fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet" />
+    <link href="css/stlMainSite.css" rel="stylesheet" />
+    <link href="css/stlHomePage.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="Header-M">
+            <div class="H-M-1">
+                <div class="H1-contairner">
+                    <div class="H1-c1">
+                        <a href="HomePage.aspx" style="text-decoration: none; display: flex; align-items: center; color: white;">
+                            <i class="fa-solid fa-book" style="font-size: 30px;"></i>
+                            <h2 style="margin-left: 10px;">MỌT TRUYỆN</h2>
+                        </a>
+                    </div>
+                    <div class="H1-c2">
+                        <div class="H1-c2-it dmhv">
+                            <i class="fa-solid fa-list marginr"></i>
+                            Danh Sách
+                            <i class="fa-solid fa-caret-down marginl"></i>
+                            <div class="DM">
+                                <ul style="padding: 0;" class="DM-list">
+                                    <asp:DataList ID="DLDM" runat="server">
+                                        <ItemTemplate>
+                                            <a href="TruyenPage.aspx?ID=DM<%#Eval("MaDM") %>" style="text-decoration: none;">
+                                                <div class="DM-it">
+                                                    <%#Eval("TenDM") %>
+                                                </div>
+                                            </a>
+                                        </ItemTemplate>
+                                    </asp:DataList>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="H1-c2-it dmtl">
+                            <i class="fa-solid fa-list marginr"></i>
+                            Thể Loại
+                            <i class="fa-solid fa-caret-down marginl"></i>
+                            <div class="TL">
+                                <ul class="TL-list" style="padding: 0;">
+                                    <asp:DataList ID="DLTL" runat="server">
+                                        <ItemTemplate>
+                                            <a href="TruyenPage.aspx?ID=TL<%#Eval("MaTL") %>" style="text-decoration: none;">
+                                                <div class="DM-it">
+                                                    <%#Eval("TenTL") %>
+                                                </div>
+                                            </a>
+                                        </ItemTemplate>
+                                    </asp:DataList>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="H1-c3">
+                        <div class="search-contairner">
+                            <input class="ip-search" placeholder="Tìm kiếm..." />
+                            <button class="btn-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="H-M-2">
+                <div class="Nguon">
+                    Mọt Truyện - Website được phát triển bởi nhóm 6 môn Các mô hình phần mềm.
+                </div>
+            </div>
+        </div>
+        <div style="background-color: #242526;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="footer">
+            <div class="f1">
+                <div class="f1-content">
+                    <i style="font-weight: bold;">MỌT TRUYỆN</i> - Đọc truyện online, đọc truyện chữ, truyện hay. Website luôn cập nhật những bộ truyện mới thuộc các thể loại đặc sắc như truyện tiên hiệp, truyện kiếm hiệp, hay truyện ngôn tình một cách nhanh nhất. Hỗ trợ mọi thiết bị như di động và máy tính bảng.
+                </div>
+            </div>
+            <div class="f2">
+                Website được phát triển bởi Nhóm 6 môn Các mô hình phần mềm.
+            </div>
+        </div>
+    </form>
+</body>
+</html>
